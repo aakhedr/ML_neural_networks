@@ -30,8 +30,8 @@ m = length(y); % number of training examples
 %           grad = grad + YOUR_CODE_HERE (using the temp variable)
 %
 H = sigmoid(X * theta);
-J = 1/m * (-y' * log(H) - (1 - y)' * log(1 - H)) + lambda / ... 
-    (2 * m) * sum(theta(2:end, :).^2);
+J = 1/m * (-y' * log(H) - (1 - y)' * log(1 - H)) +  ... 
+    lambda /(2 * m) * sum(theta(2:end, :).^2);
 grad_0 = 1/m  * (X(:,1)' * (H - y));
 grad_rest = 1/m * (X(:,2:end)' * (H - y)) + lambda/ m * theta(2:end,:);
 grad = [grad_0; grad_rest];
